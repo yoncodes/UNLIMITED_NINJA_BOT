@@ -21,3 +21,21 @@ pip install -r requirements.txt --upgrade
 ```html
 coming soon
 ```
+
+# What Works
+* Check In Claims
+* Online Claims
+* Kaguya Power Claims
+* Vip Claims
+* Profile Claims 
+* Samsara Land (Auto only)
+* Top Kages (Your welcome)
+* Treasure Map (Can't rob peeps yet lol)(80% done)
+* Arena Fights 
+* Arena Chest Claims
+* Forbidden Justu Claim
+* Six Path Arcanum
+* Mount Myobuku
+* Dungeons (Auto Claims only)
+* Daily Benefits(Free and extra)
+* Etc... (too lazy to type more)
