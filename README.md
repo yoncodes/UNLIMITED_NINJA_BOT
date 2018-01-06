@@ -1,5 +1,18 @@
 # UN_BOT Python
 
-Wanted to test myself to see if I could automate a browser game. Weird, yes worth it, debatable. Needed to find a way to do it. Tried many methods and ended with automated mouse clicks. I know sue me :p. * Everything you see here is a work in progress. Will update whenever I can. *
+Wanted to test myself to see if I could automate a browser game. Weird, yes worth it, debatable. Needed to find a way to do it. Tried many methods and ended up with automated mouse clicks. I know sue me :p. * Everything you see here is a work in progress. Will update whenever I can. *
 
 <h4> Use at your own risk :P </h4>
+
+# How to use
+The program is simple to use 
+
+# How to install
+Download the file from zip as is. Extract to any directory.
+```html
+pip install -r requirements.txt --upgrade
+```
+
+# Dependencies
+* Python 2.7.*
+* Selenium
