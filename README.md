@@ -30,6 +30,9 @@ coming soon
 ![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Kaguya_claim.gif)
 
 * Vip Claims
+
+![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/VIP_CLAIM.gif)
+
 * Profile Claims 
 * Samsara Land (Auto only)
 * Top Kages (Your welcome)
