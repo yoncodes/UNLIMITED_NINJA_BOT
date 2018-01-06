@@ -38,7 +38,7 @@ coming soon
 * Top Kages (Your welcome)
 * Treasure Map (Can't rob peeps yet lol)(80% done)
 
-![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Treasure_Hunt.gif)
+![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Treasure_hunt.gif)
 
 * Arena Fights 
 * Arena Chest Claims
