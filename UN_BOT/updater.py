@@ -92,13 +92,19 @@ class updater:
         return current_version
 
     def server_version(self):
+        versions = []
         browser = requests.get('https://github.com/yoncodes/UNLIMITED_NINJA_BOT/releases/latest')
         soup = BeautifulSoup(browser.content,"html5lib")
         
         for header in soup.findAll("div", {"class":"release-header"}):
-            header_sub = header.find('h1', attrs={'class': 'release-title'})
+           for header_sub in header.find_all('h1', attrs={'class': 'release-title'}):
+               versions.append(header_sub.text.strip())
 
-        m = re.search(r"(v\d.\d.\d.\d|v\d.\d.\d)",header_sub.text)
+        #print versions[0]
 
-        serverVersion = m.group()
+        m = re.search(r"(v\d.\d.\d.\d|v\d.\d.\d)",versions[0])
+
+        serverVersion = m.group(0)
+
+        #print serverVersion
         return serverVersion
