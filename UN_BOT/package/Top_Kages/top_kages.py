@@ -8,7 +8,7 @@ class top_kages:
 	def __init__(self, mouse, positions):
 		self.mouse = mouse
 		self.positions = positions
-
+		
 		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
 		sleep(3)
 		self.mouse.move(self.positions.parse(_POSITIONS, 'top_kages', 'open'))

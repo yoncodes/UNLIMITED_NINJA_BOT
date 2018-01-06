@@ -24,9 +24,10 @@ class arena:
 	def fights(self, fights):
 		self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'open'))
 		sleep(3)
-		self.fights = int(self.positions.parse(_SETTINGS, 'arena','fights_per_day')[0]) - int(self.positions.parse(_SETTINGS, 'arena','fights_today')[0])
+		self.fights = 0
+		current_fights = self.positions.parse(_SETTINGS,'arena','fights_today')[0]
 
-		while self.fights <= fights and fights >= self.fights:
+		while self.fights < fights:
 			num = self.positions.parse(_POSITIONS, 'arena', str((randint(2,10))) + '_place')
 			print "[+] Waiting "
 			sleep(2)
@@ -34,13 +35,13 @@ class arena:
 			print "[+] Fighting "
 			sleep(1)
 			print "[+] Waiting 20 seconds"
-			sleep(19)
+			sleep(23)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'skip'))
 			sleep(3)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'ok'))
 
 			self.fights += 1
-			self.positions.write(_SETTINGS,'arena','fights_today', int(self.fights))
+			self.positions.write(_SETTINGS,'arena','fights_today',int(current_fights) + int(self.fights))
 		sleep(1)
 		self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'close'))
 

@@ -11,6 +11,7 @@ from package.Arena import arena
 from package.Dungeon import dungeon
 from package.Daily_Benefit import daily_benefit
 from package.Land_Of_Oracles import land_of_oracles
+from package.Wings import wings
 
 # Import Hack
 import os, sys, inspect
@@ -69,7 +70,11 @@ class app:
 
 	def update(self):
 		self.update = update.updater()
-		self.update.check()
+
+		if eval(str(self.positions.parse(_SETTINGS, 'update', 'auto')[0])):
+			self.update.check()
+		else:
+			print "[+] Auto Update disabled"
 
 	def start(self):
 		pass
@@ -89,12 +94,20 @@ class app:
 		return self.claim1
 
 	def daily_benefit(self):
-		self.daily_benefit = daily_benefit.daily_benefit(self.mouse, self.positions)
-		return self.daily_benefit()
+		if eval(str(self.positions.parse(_SETTINGS, 'daily_benefit', 'done')[0])) != True:
+			self.daily_benefit = daily_benefit.daily_benefit(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'daily_benefit','done', 1)
+			return self.daily_benefit()
+		else:
+			print "[+] Daily benefit : Complete"
 
 	def dungeon(self):
-		self.Dungeon = dungeon.dungeon(self.mouse, self.positions)
-		return self.Dungeon()
+		if eval(str(self.positions.parse(_SETTINGS, 'dungeon', 'done')[0])) != True:
+			self.Dungeon = dungeon.dungeon(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'dungeon','done', 1)
+			return self.Dungeon()
+		else:
+			print "[+] Dungeon : Complete"
 
 	def eight_gates(self):
 		pass
@@ -116,8 +129,12 @@ class app:
 		self.countdown.timer(1)
 
 	def forbidden_jutsu(self):
-		self.forbidden_jutsu_lab = FJL.forbidden_jutsu_lab(self.mouse, self.positions)
-		return self.forbidden_jutsu_lab()
+		if eval(str(self.positions.parse(_SETTINGS, 'forbidden_jutsu', 'done')[0])) != True:
+			self.forbidden_jutsu_lab = FJL.forbidden_jutsu_lab(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'forbidden_jutsu','done', 1)
+			return self.forbidden_jutsu_lab()
+		else:
+			print "[+] Forbdden Justu Lab : Complete"
 
 
 	def guild(self):
@@ -142,8 +159,12 @@ class app:
 
 	def loto(self):
 		# Legends of the Oracles
-		self.land_of_oracles = land_of_oracles.land_of_oracles(self.mouse, self.positions)
-		return self.land_of_oracles()
+		if eval(str(self.positions.parse(_SETTINGS, 'loto', 'done')[0])) != True:
+			self.land_of_oracles = land_of_oracles.land_of_oracles(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'loto','done', 1)
+			return self.land_of_oracles()
+		else:
+			print "[+] Land Of Oracles : Complete"
 
 	def lost_tower(self):
 		self.countdown.timer(1)
@@ -173,30 +194,34 @@ class app:
 		pass
 
 	def mount_myobuku(self):
-		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
-		self.countdown.timer(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'open'))
-		self.countdown.timer(5)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'practice'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'support_wings'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'fairy_training'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'fairy_training_confirm'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'down'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'army'))
-		self.countdown.timer(1)
-
-		training = 0
-		while training < 5:
-			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'silver_training'))
+		if eval(str(self.positions.parse(_SETTINGS, 'mount_myobuku', 'done')[0])) != True:
+			self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
+			self.countdown.timer(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'open'))
+			self.countdown.timer(5)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'practice'))
 			self.countdown.timer(1)
-			training += 1
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'support_wings'))
+			self.countdown.timer(1)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'fairy_training'))
+			self.countdown.timer(1)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'fairy_training_confirm'))
+			self.countdown.timer(1)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'down'))
+			self.countdown.timer(1)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'army'))
+			self.countdown.timer(1)
 
-		self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'close'))
+			training = 0
+			while training < 5:
+				self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'silver_training'))
+				self.countdown.timer(1)
+				training += 1
+
+			self.mouse.move(self.positions.parse(_POSITIONS, 'mount_myobuku', 'close'))
+			self.positions.write(_SETTINGS,'mount_myobuku','done', 1)
+		else:
+			print "[+] Mount Myobuku : Complete"
 
 	def ninja_clash(self):
 		pass
@@ -205,22 +230,28 @@ class app:
 		pass
 
 	def occult_techniques(self, harvest=3):
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
-		self.countdown.timer(5)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'open'))
-		self.countdown.timer(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'aquire'))
-		self.countdown.timer(2)
-
-		times = 0
-		while times <= harvest:
-			self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'harvest'))
+		if eval(str(self.positions.parse(_SETTINGS, 'occult_techniques', 'done')[0])) != True:
+			self.countdown.timer(1)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
+			self.countdown.timer(5)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'open'))
 			self.countdown.timer(2)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'aquire'))
+			self.countdown.timer(2)
+
+			times = 0
+			while times < harvest:
+				self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'harvest'))
+				self.countdown.timer(2)
+				self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'reset'))
+				self.countdown.timer(2)
+				times += 1
 			self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'reset'))
 			self.countdown.timer(2)
-			times += 1
-		self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'close'))
+			self.mouse.move(self.positions.parse(_POSITIONS, 'occult_techniques', 'close'))
+			self.positions.write(_SETTINGS,'occult_techniques','done', 1)
+		else:
+			print "[+] Occult Techniques : Complete"
 
 	def realms(self):
 		pass
@@ -232,17 +263,25 @@ class app:
 		pass
 
 	def samsara_land(self, land="nightmare"):
-		self.samsara_land = samsara_land.samsara_land(self.mouse,self.positions)
-		self.countdown.timer(5)
-		self.samsara_land.method(land)
-		self.countdown.timer(2)
-		self.samsara_land.wheel_of_fate()
-		self.countdown.timer(2)
-		self.samsara_land.close()
+		if eval(str(self.positions.parse(_SETTINGS, 'samsara_land', 'done')[0])) != True:
+			self.samsara_land = samsara_land.samsara_land(self.mouse,self.positions)
+			self.countdown.timer(5)
+			self.samsara_land.method(land)
+			self.countdown.timer(2)
+			self.samsara_land.wheel_of_fate()
+			self.countdown.timer(2)
+			self.samsara_land.close()
+			self.positions.write(_SETTINGS,'samsara_land','done', 1)
+		else:
+			print "[+] Samsara Land : Complete"
 
 	def six_path_arcanum(self):
-		self.six_path_arcanum = six_path_arcanum.six_path_arcanum(self.mouse, self.positions)
-		return self.six_path_arcanum()
+		if eval(str(self.positions.parse(_SETTINGS, 'six_path_arcanum', 'done')[0])) != True:
+			self.six_path_arcanum = six_path_arcanum.six_path_arcanum(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'six_path_arcanum','done', 1)
+			return self.six_path_arcanum()
+		else:
+			print "[+] Six Path Arcanum : Complete"
 
 	def special_events(self, data):
 		pass
@@ -255,11 +294,24 @@ class app:
 		return self.treasure_map1()
 
 	def top_kages(self, ri=True, practice='all'):
-		self.top_kages = top_kages.top_kages(self.mouse,self.positions)
-		self.top_kages.practice(practice, ri)
+		if eval(str(self.positions.parse(_SETTINGS, 'top_kages', 'done')[0])) != True:
+
+			self.top_kages = top_kages.top_kages(self.mouse,self.positions)
+			self.top_kages.practice(practice, ri)
+			self.positions.write(_SETTINGS,'top_kages','done', 1)
+		else:
+			print "[+] Top Kages : Complete"
 
 	def tournament(self):
 		pass
 
 	def ultimate_challenge(self):
 		pass 
+
+	def wings(self):
+		if eval(str(self.positions.parse(_SETTINGS, 'top_kages', 'done')[0])) != True:
+			self.wings = wings.wings(self.mouse, self.positions)
+			self.positions.write(_SETTINGS,'wings','done', 1)
+			return self.wings().claim()
+		else:
+			print "[+] Wings : Complete"
