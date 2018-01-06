@@ -27,6 +27,8 @@ from function.countdown import countdown
 from function._time import _time
 from function.check import check
 
+import updater as update
+
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 
@@ -64,6 +66,10 @@ class app:
 	def system_checks(self):
 		self.check = check(self.positions, self.time)
 		return self.check()
+
+	def update(self):
+		self.update = update.updater()
+		update.check()
 
 	def start(self):
 		pass

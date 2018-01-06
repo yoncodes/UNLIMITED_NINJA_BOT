@@ -2,9 +2,12 @@ from UN_BOT import app
 
 UN_START = app.app()
 
-UN_START.show_window()
-UN_START.system_checks().reset()
-UN_START.claim().check_in()
+UN_START.update()
+
+
+#UN_START.show_window()
+#UN_START.system_checks().reset()
+#UN_START.claim().check_in()
 #UN_START.claim().online()
 #UN_START.claim().kaguya_power()
 #UN_START.claim().vip()
