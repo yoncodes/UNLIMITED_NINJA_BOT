@@ -37,6 +37,9 @@ coming soon
 * Samsara Land (Auto only)
 * Top Kages (Your welcome)
 * Treasure Map (Can't rob peeps yet lol)(80% done)
+
+![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Treasure_Hunt.gif)
+
 * Arena Fights 
 * Arena Chest Claims
 * Forbidden Justu Claim
