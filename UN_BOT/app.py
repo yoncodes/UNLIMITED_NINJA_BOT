@@ -69,7 +69,7 @@ class app:
 
 	def update(self):
 		self.update = update.updater()
-		update.check()
+		self.update.check()
 
 	def start(self):
 		pass
