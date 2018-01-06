@@ -1,0 +1,39 @@
+{
+  "accounts":{
+    "username":"",
+    "password":""
+  },
+  "dailies":{
+    "start":"12:00AM",
+    "end":"11:59PM"
+  }
+  ,
+  "events": {
+    "beast": {
+      "uzumaki": {
+        "start": "",
+        "end": ""
+      },
+      "senju": {
+        "start": "",
+        "end": ""
+      },
+      "uchiha": {
+        "start": "",
+        "end": ""
+      }
+    },
+    "konoha_conquest": {
+      "start": "7:59PM",
+      "end": "8:30PM"
+    },
+    "konoha_defence": {
+      "start": "",
+      "end": ""
+    },
+    "rebels": {
+      "start": "",
+      "end": ""
+    }
+  }
+}
