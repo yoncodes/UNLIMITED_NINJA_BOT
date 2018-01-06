@@ -26,7 +26,9 @@ coming soon
 * Check In Claims
 * Online Claims
 * Kaguya Power Claims
-![](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Kaguya_claim.gif)
+
+![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Kaguya_claim.gif)
+
 * Vip Claims
 * Profile Claims 
 * Samsara Land (Auto only)
