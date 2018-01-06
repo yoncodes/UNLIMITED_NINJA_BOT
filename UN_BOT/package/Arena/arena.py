@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 
 import os.path
 
-_POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\v6\settings\positions.ini'
-_SETTINGS = os.path.join(os.path.dirname(os.getcwd()))  + '\\v6\settings\settings.ini'
+_POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\positions.ini'
+_SETTINGS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\settings.ini'
 
 class arena:
 	 

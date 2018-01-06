@@ -5,7 +5,7 @@ UN_START = app.app()
 UN_START.update()
 
 
-#UN_START.show_window()
+UN_START.show_window()
 #UN_START.system_checks().reset()
 #UN_START.claim().check_in()
 #UN_START.claim().online()

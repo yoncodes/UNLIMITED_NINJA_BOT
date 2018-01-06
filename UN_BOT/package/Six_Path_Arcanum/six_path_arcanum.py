@@ -3,7 +3,7 @@ from time import sleep
 
 import os.path
 
-_POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\v6\settings\positions.ini'
+_POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\positions.ini'
 
 class six_path_arcanum:
 
