@@ -1,4 +1,4 @@
-__version__ = "v1.0.2"
+__version__ = "v1.0.3"
 __author__ = "Yon"
-__email__ = "diycertified@aol.com"
-__date__ = "01/06/2018"
+__email__ = "jmcservice17@gmail.com"
+__date__ = "01/12/2018"

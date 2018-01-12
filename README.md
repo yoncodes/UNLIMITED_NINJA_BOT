@@ -47,4 +47,5 @@ coming soon
 * Mount Myobuku
 * Dungeons (Auto Claims only)
 * Daily Benefits(Free and extra)
+* Elite Match (80% complete)
 * Etc... (too lazy to type more)

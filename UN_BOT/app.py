@@ -12,6 +12,8 @@ from package.Dungeon import dungeon
 from package.Daily_Benefit import daily_benefit
 from package.Land_Of_Oracles import land_of_oracles
 from package.Wings import wings
+from package.Mail import mail
+from package.ELITE_MATCH import elite_match
 
 # Import Hack
 import os, sys, inspect
@@ -113,20 +115,10 @@ class app:
 		pass
 
 	def elite_match(self):
-		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
-		self.countdown.timer(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'open'))
-		self.countdown.timer(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'toast'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'toast_plum'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'toast_close'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'join'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'close'))
-		self.countdown.timer(1)
+		if eval(str(self.positions.parse(_SETTINGS, 'elite_match', 'done')[0])) != True:
+			self.elite_match = elite_match.elite_match(self.mouse,self.positions)
+			self.positions.write(_SETTINGS,'elite_match','done', 1)
+			return self.elite_match()
 
 	def forbidden_jutsu(self):
 		if eval(str(self.positions.parse(_SETTINGS, 'forbidden_jutsu', 'done')[0])) != True:
@@ -135,6 +127,7 @@ class app:
 			return self.forbidden_jutsu_lab()
 		else:
 			print "[+] Forbdden Justu Lab : Complete"
+		pass
 
 
 	def guild(self):
@@ -185,7 +178,8 @@ class app:
 
 
 	def mail(self):
-		pass
+		self.mail = mail.mail(self.mouse, self.positions)
+		return self.mail()
 
 	def mall(self):
 		pass

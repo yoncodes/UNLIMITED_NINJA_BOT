@@ -100,11 +100,10 @@ class updater:
            for header_sub in header.find_all('h1', attrs={'class': 'release-title'}):
                versions.append(header_sub.text.strip())
 
-        #print versions[0]
-
+        
         m = re.search(r"(v\d.\d.\d.\d|v\d.\d.\d)",versions[0])
 
         serverVersion = m.group(0)
 
-        #print serverVersion
+        
         return serverVersion
