@@ -1,6 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-
 from package.Claim import claim
 from package.Forbidden_Justu import forbidden_jutsu_lab as FJL
 from package.Six_Path_Arcanum import six_path_arcanum
