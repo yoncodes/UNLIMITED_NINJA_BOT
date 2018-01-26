@@ -1,0 +1,3 @@
+*.pyc 
+.gitignore
+cache/unbot_cache.sqlite
