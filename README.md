@@ -15,7 +15,9 @@ pip install -r requirements.txt --upgrade
 
 # Dependencies
 * Python 2.7.*
-* Selenium
+* BeautifulSoup
+* html5lib
+* requests_cache
 
 # Example
 ```html
