@@ -11,6 +11,9 @@ import re
 import zipfile
 from shutil import move
 import shutil
+import requests_cache
+
+requests_cache.install_cache('cache/unbot_cache', backend='sqlite', expire_after=600)
 
 class updater:
     def __init__(self):
