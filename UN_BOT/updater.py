@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import re
 import zipfile
 from shutil import move
+from shutil import copyfile
 import shutil
 import requests_cache
 
@@ -52,9 +53,15 @@ class updater:
         return local_filename
     
     def backup(self):
-        pass
+        src_dir = os.path.abspath(os.curdir)
+        copyfile(src_dir + '\old', src_dir + '\settings\settings.ini')
+
+    def restore(self):
+        src_dir = os.path.abspath(os.curdir)
+        shutil.move( src_dir + '\old\settings.ini' , src_dir + '\settings')
 
     def setup(self,filename):
+        self.backup()
         filelist = []
         fh = open(filename, 'rb')
         z = zipfile.ZipFile(fh)
@@ -88,6 +95,7 @@ class updater:
             shutil.rmtree(root_src_dir)
         except:
             rmdir(root_src_dir)
+        self.restore()
     
 
     def client_version(self):
