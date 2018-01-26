@@ -75,6 +75,7 @@ class app:
 		else:
 			print "[+] Auto Update disabled"
 
+
 	def start(self):
 		pass
 
