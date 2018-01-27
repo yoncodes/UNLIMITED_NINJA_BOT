@@ -8,9 +8,7 @@ class samsara_land():
 	def __init__(self, mouse, positions):
 		self.mouse = mouse
 		self.positions = positions
-		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'samsara_land', 'open'))
+		
 
 	def method(self, method):
 		if method == "normal":
@@ -18,6 +16,9 @@ class samsara_land():
 		elif method == "scary":
 			self.scary()
 		elif method == "nightmare":
+			self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'samsara_land', 'open'))
 			self.nightmare()
 		elif method == "ri_normal":
 			self.ri_normal()
@@ -33,6 +34,7 @@ class samsara_land():
 		pass
 
 	def nightmare(self):
+		
 		sleep(1)
 		self.mouse.move(self.positions.parse(_POSITIONS, 'samsara_land', 'nightmare_auto_challenge'))
 		sleep(32)

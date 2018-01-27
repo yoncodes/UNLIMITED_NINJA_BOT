@@ -51,3 +51,24 @@ coming soon
 * Daily Benefits(Free and extra)
 * Elite Match (80% complete)
 * Etc... (too lazy to type more)
+
+# To do
+* Ninja Crusade 
+* Taboo Justu
+* Bloodline Limit
+* Dungeon (Floor claims)
+* Jinchuriki
+* Sage Heirloom
+* Eight Gates
+* Guild Tree (Claims, Donate, etc)
+* Elite Match (Fights, auto, manual)
+* Lost Tower (Manual Fights)
+* Ninja Clash
+* Beast 
+* Konoha Conquest
+* Konoha Defense
+* Rebels
+* Ultimate Challenge
+* Lost Artifact
+* Strongest Guild
+

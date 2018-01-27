@@ -1,5 +1,5 @@
 from package.Claim import claim
-from package.Forbidden_Justu import forbidden_jutsu_lab as FJL
+from package.Forbidden_Justu import forbidden_jutsu_lab
 from package.Six_Path_Arcanum import six_path_arcanum
 from package.Samsara_Land import samsara_land
 from package.Top_Kages import top_kages
@@ -94,38 +94,32 @@ class app:
 		return self.claim1
 
 	def daily_benefit(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'daily_benefit', 'done')[0])) != True:
-			self.daily_benefit = daily_benefit.daily_benefit(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'daily_benefit','done', 1)
-			return self.daily_benefit()
-		else:
-			print "[+] Daily benefit : Complete"
+	
+		self.daily_benefit = daily_benefit.daily_benefit(self.mouse, self.positions)
+		return self.daily_benefit()
 
 	def dungeon(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'dungeon', 'done')[0])) != True:
-			self.Dungeon = dungeon.dungeon(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'dungeon','done', 1)
-			return self.Dungeon()
-		else:
-			print "[+] Dungeon : Complete"
-
+		
+		self.Dungeon = dungeon.dungeon(self.mouse, self.positions)
+		return self.Dungeon()
+		
 	def eight_gates(self):
 		pass
 
 	def elite_match(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'elite_match', 'done')[0])) != True:
-			self.elite_match = elite_match.elite_match(self.mouse,self.positions)
-			self.positions.write(_SETTINGS,'elite_match','done', 1)
-			return self.elite_match()
+		
+		self.elite_match = elite_match.elite_match(self.mouse,self.positions)
+			
+		return self.elite_match()
 
 	def forbidden_jutsu(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'forbidden_jutsu', 'done')[0])) != True:
-			self.forbidden_jutsu_lab = FJL.forbidden_jutsu_lab(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'forbidden_jutsu','done', 1)
-			return self.forbidden_jutsu_lab()
-		else:
-			print "[+] Forbdden Justu Lab : Complete"
-		pass
+		
+		self.forbidden_jutsu_lab1 = forbidden_jutsu_lab.forbidden_jutsu_lab(self.mouse, self.positions)
+		return self.forbidden_jutsu_lab1()
+		
+			
+
+		
 
 
 	def guild(self):
@@ -150,12 +144,11 @@ class app:
 
 	def loto(self):
 		# Legends of the Oracles
-		if eval(str(self.positions.parse(_SETTINGS, 'loto', 'done')[0])) != True:
-			self.land_of_oracles = land_of_oracles.land_of_oracles(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'loto','done', 1)
-			return self.land_of_oracles()
-		else:
-			print "[+] Land Of Oracles : Complete"
+		
+		self.land_of_oracles = land_of_oracles.land_of_oracles(self.mouse, self.positions)
+			
+		return self.land_of_oracles()
+	
 
 	def lost_tower(self):
 		self.countdown.timer(1)
@@ -268,12 +261,10 @@ class app:
 			print "[+] Samsara Land : Complete"
 
 	def six_path_arcanum(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'six_path_arcanum', 'done')[0])) != True:
-			self.six_path_arcanum = six_path_arcanum.six_path_arcanum(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'six_path_arcanum','done', 1)
-			return self.six_path_arcanum()
-		else:
-			print "[+] Six Path Arcanum : Complete"
+		
+		self.six_path_arcanum = six_path_arcanum.six_path_arcanum(self.mouse, self.positions)
+		self.positions.write(_SETTINGS,'six_path_arcanum','done', 1)
+		return self.six_path_arcanum()
 
 	def special_events(self, data):
 		pass
@@ -301,9 +292,8 @@ class app:
 		pass 
 
 	def wings(self):
-		if eval(str(self.positions.parse(_SETTINGS, 'top_kages', 'done')[0])) != True:
-			self.wings = wings.wings(self.mouse, self.positions)
-			self.positions.write(_SETTINGS,'wings','done', 1)
-			return self.wings().claim()
-		else:
-			print "[+] Wings : Complete"
+		
+		self.wings = wings.wings(self.mouse, self.positions)
+			
+		return self.wings().claim()
+		

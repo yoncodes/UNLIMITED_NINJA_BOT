@@ -5,7 +5,7 @@ import datetime
 import os.path
 
 _POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\positions.ini'
-
+_SETTINGS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\settings.ini'
 
 class claim:
 
@@ -26,21 +26,25 @@ class claim:
 		sleep(.5)
 
 	def check_in(self):
-		print "[+] Online : Checking in"
-		self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_default'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in'))
-		sleep(3)
-		print "[+] Online : Claiming Rewards"
-		self.mouse.move(self.positions.parse(_POSITIONS,'claim', 'check_in_rewards'))
-		sleep(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_cumulative'))
-		sleep(2)
-		self.day()
-		sleep(1)
-		print "[+] Online : Checking in Closing"
-		self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_close'))
-		sleep(.1)
+		if eval(str(self.positions.parse(_SETTINGS, 'claim', 'check_in')[0])) != True:
+			print "[+] Online : Checking in"
+			self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_default'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in'))
+			sleep(3)
+			print "[+] Online : Claiming Rewards"
+			self.mouse.move(self.positions.parse(_POSITIONS,'claim', 'check_in_rewards'))
+			sleep(2)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_cumulative'))
+			sleep(2)
+			self.day()
+			sleep(1)
+			print "[+] Online : Checking in Closing"
+			self.mouse.move(self.positions.parse(_POSITIONS, 'claim', 'check_in_close'))
+			sleep(.1)
+			self.positions.write(_SETTINGS,'claim','check_in', 1)
+		else:
+			print "[+] Check In : Complete"
 
 	def day(self):
 		today = datetime.date.today()
@@ -55,25 +59,37 @@ class claim:
 			self.mouse.move(num)
 
 	def kaguya_power(self):
-		self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'open'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'claim'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'close'))
-		sleep(.1)
+		if eval(str(self.positions.parse(_SETTINGS, 'claim', 'kaguya_power')[0])) != True:
+			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'open'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'claim'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'close'))
+			sleep(.1)
+			self.positions.write(_SETTINGS,'claim','kaguya_power', 1)
+		else:
+			print "[+] Kaguya Power Claim : Complete"
 
 	def vip(self):
-		self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'open'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'claim'))
-		sleep(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'close'))
-		sleep(.1)
+		if eval(str(self.positions.parse(_SETTINGS, 'claim', 'vip')[0])) != True:
+			self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'open'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'claim'))
+			sleep(2)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'vip', 'close'))
+			sleep(.1)
+			self.positions.write(_SETTINGS,'claim','vip', 1)
+		else:
+			print "[+] Vip Claim : Complete"
 
 	def profile(self):
-		self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'open'))
-		sleep(3)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'claim'))
-		sleep(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'close'))
-		sleep(.1)
+		if eval(str(self.positions.parse(_SETTINGS, 'claim', 'profile')[0])) != True:
+			self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'open'))
+			sleep(3)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'claim'))
+			sleep(2)
+			self.mouse.move(self.positions.parse(_POSITIONS, 'profile', 'close'))
+			sleep(.1)
+			self.positions.write(_SETTINGS,'claim','profile', 1)
+		else:
+			print "[+] Profile Claim : Complete"
