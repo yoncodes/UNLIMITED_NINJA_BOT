@@ -4,8 +4,10 @@ Wanted to test myself to see if I could automate a browser game. Weird, yes wort
 
 <h4> Use at your own risk :P </h4>
 
-# How to use
-The program is simple to use 
+# What was Used
+* python 2.7.*
+* Coowon Browser
+* Google
 
 # How to install
 Download the file from zip as is. Extract to any directory.
