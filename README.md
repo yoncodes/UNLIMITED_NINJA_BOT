@@ -35,14 +35,14 @@ coming soon
 
 * Vip Claims
 
-![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/VIP_CLAIM.gif)
+![Vip](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/VIP_CLAIM.gif)
 
 * Profile Claims 
 * Samsara Land (Auto only)
 * Top Kages (Your welcome)
 * Treasure Map (Can't rob peeps yet lol)(80% done)
 
-![Kaguya Power](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Treasure_hunt.gif)
+![Treasure](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/Treasure_hunt.gif)
 
 * Arena Fights 
 * Arena Chest Claims
@@ -52,6 +52,9 @@ coming soon
 * Dungeons (Auto Claims only)
 * Daily Benefits(Free and extra)
 * Elite Match (80% complete)
+* Beast (Work In progress)
+
+![Treasure](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/BEAST_FORM.gif)
 * Etc... (too lazy to type more)
 
 # To do

@@ -19,8 +19,9 @@ class elite_match:
 		if eval(str(self.positions.parse(_SETTINGS, 'elite_match', 'done')[0])) != True:
 			self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
 			print "[+] Elite Match : Open"
-			sleep(3)
+			sleep(5)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'open'))
+			sleep(2)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'toast'))
 			sleep(1)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'elite_match', 'toast_plum'))

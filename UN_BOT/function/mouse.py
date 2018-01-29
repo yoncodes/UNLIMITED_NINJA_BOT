@@ -40,6 +40,7 @@ class mouse:
 		self.mousePos((current_pos))
 		self.leftDown()
 		self.mousePos((new_pos))
+		time.sleep(1)
 		self.leftUp()
 
 	def mousePos(self,cord):

@@ -63,6 +63,9 @@ class app:
 	def cord(self):
 		self.mouse.get_cords()
 
+	def drag_n_drop(self,current_pos, new_pos):
+		self.mouse.drag_n_drop(current_pos, new_pos)
+
 	def commands(self, cmd):
 		self.keyboard.type(cmd)
 
