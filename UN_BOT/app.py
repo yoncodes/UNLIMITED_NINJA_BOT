@@ -11,6 +11,7 @@ from package.Land_Of_Oracles import land_of_oracles
 from package.Wings import wings
 from package.Mail import mail
 from package.ELITE_MATCH import elite_match
+from package.Konoha import konoha
 
 # Import Hack
 import os, sys, inspect
@@ -26,6 +27,7 @@ from function.notify import popup
 from function.countdown import countdown
 from function._time import _time
 from function.check import check
+from function.schedule import schedule
 
 import updater as update
 
@@ -46,6 +48,7 @@ class app:
 		self.popup = popup()
 		self.countdown = countdown()
 		self.time = _time()
+		self.schedule = schedule()
 
 	def windows_ballon(self, title, msg):
 		self.popup.ShowWindow(title, msg)
@@ -140,7 +143,7 @@ class app:
 		konoha.defense.end()
 
 		"""
-		pass
+		self.konoha1 = konoha.konoha(self.mouse, self.positions) 
 
 	def loto(self):
 		# Legends of the Oracles

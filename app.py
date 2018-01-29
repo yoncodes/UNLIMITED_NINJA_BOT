@@ -6,7 +6,7 @@ UN_START.update()
 
 #UN_START.cord() # testing
 
-UN_START.show_window()
+#UN_START.show_window()
 #UN_START.system_checks().master_reset() #resets everything back to zero, great for at reset
 #UN_START.claim().check_in()
 #UN_START.claim().online()
