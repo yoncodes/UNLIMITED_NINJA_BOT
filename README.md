@@ -54,7 +54,9 @@ coming soon
 * Elite Match (80% complete)
 * Beast (Work In progress)
 
-![Treasure](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/BEAST_FORM.gif)
+![Beast](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/BEAST_FORM.gif)
+
+* Sage Heirloom
 * Etc... (too lazy to type more)
 
 # To do
@@ -63,7 +65,7 @@ coming soon
 * Bloodline Limit
 * Dungeon (Floor claims)
 * Jinchuriki
-* Sage Heirloom
+* <del>Sage Heirloom</del>
 * Eight Gates
 * Guild Tree (Claims, Donate, etc)
 * Elite Match (Fights, auto, manual)
