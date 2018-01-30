@@ -12,6 +12,7 @@ from package.Wings import wings
 from package.Mail import mail
 from package.ELITE_MATCH import elite_match
 from package.Konoha import konoha
+from package.Sage_Heirloom import sage_heirloom
 
 # Import Hack
 import os, sys, inspect
@@ -251,7 +252,9 @@ class app:
 		pass
 
 	def sage_heirloom(self):
-		pass
+		self.sage_heirloom1 = sage_heirloom.sage_heirloom(self.mouse, self.positions)
+		return self.sage_heirloom1()
+
 
 	def samsara_land(self, land="nightmare"):
 		if eval(str(self.positions.parse(_SETTINGS, 'samsara_land', 'done')[0])) != True:
@@ -269,7 +272,6 @@ class app:
 	def six_path_arcanum(self):
 		
 		self.six_path_arcanum = six_path_arcanum.six_path_arcanum(self.mouse, self.positions)
-		self.positions.write(_SETTINGS,'six_path_arcanum','done', 1)
 		return self.six_path_arcanum()
 
 	def special_events(self, data):
