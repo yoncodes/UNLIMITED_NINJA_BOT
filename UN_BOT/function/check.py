@@ -24,6 +24,10 @@ class check:
 
 
 	def master_reset(self):
+		self.positions.write(_SETTINGS,'claim','check_in', 0)
+		self.positions.write(_SETTINGS,'claim','kaguya_power', 0)
+		self.positions.write(_SETTINGS,'claim','profile', 0)
+		self.positions.write(_SETTINGS,'claim','vip', 0)
 		self.positions.write(_SETTINGS,'daily_benefit','done', 0)
 		self.positions.write(_SETTINGS,'dungeon','done', 0)
 		self.positions.write(_SETTINGS,'elite_match','done', 0)
@@ -33,5 +37,6 @@ class check:
 		self.positions.write(_SETTINGS,'occult_techniques','done', 0)
 		self.positions.write(_SETTINGS,'samsara_land','done', 0)
 		self.positions.write(_SETTINGS,'six_path_arcanum','done', 0)
+		self.positions.write(_SETTINGS,'sage_heirloom','done', 0)
 		self.positions.write(_SETTINGS,'top_kages','done', 0)
 		self.positions.write(_SETTINGS,'wings','done', 0)
