@@ -28,12 +28,12 @@
       "end": "8:30PM"
     },
     "konoha_defence": {
-      "start": "",
-      "end": ""
+      "start": "8:59PM",
+      "end": "9:30PM"
     },
     "rebels": {
-      "start": "",
-      "end": ""
+      "start": "9:59PM",
+      "end": "10:30PM"
     }
   }
 }
