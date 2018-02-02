@@ -16,18 +16,42 @@ class konoha:
 	def __call__(self):
 		return self
 
+	def conquest_register(self):
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'open'))
+		sleep(3)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_conquest'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'enter'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'close'))
+
 	def conquest(self):
 		self.move(self.positions.parse(_POSITIONS, 'activity', 'open'))
 		sleep(3)
 		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_conquest'))
-		sleep(62)
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'enter'))
+		sleep(68)
 		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_conquest_auto'))
 		sleep(1800)
 		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_conquest_confirm'))
 
 	def defense(self):
-		pass 
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'open'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_defense'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'enter'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'konoha_defense_auto'))
 
 	def rebels(self):
-		pass
-
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'open'))
+		sleep(3)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'rebels_attack'))
+		sleep(3)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'enter'))
+		sleep(5)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'rebels_attack_auto_skip'))
+		sleep(3)
+		self.move(self.positions.parse(_POSITIONS, 'activity', 'rebels_attack_auto'))
