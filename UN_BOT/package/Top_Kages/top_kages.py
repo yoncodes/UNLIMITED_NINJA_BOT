@@ -21,7 +21,8 @@ class top_kages:
 		for e in range(0,stop):
 			self.mouse.move(self.positions.parse(_POSITIONS, 'top_kages', kages[e]))
 			sleep(1)
+
 			if (e >6 and not ri):
-				break
+				pass
 		self.mouse.move(self.positions.parse(_POSITIONS, 'top_kages', 'close'))
 		sleep(1)

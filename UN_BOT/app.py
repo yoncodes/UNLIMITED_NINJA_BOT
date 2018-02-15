@@ -13,6 +13,7 @@ from package.Mail import mail
 from package.ELITE_MATCH import elite_match
 from package.Konoha import konoha
 from package.Sage_Heirloom import sage_heirloom
+from package.Guild import guild
 
 # Import Hack
 import os, sys, inspect
@@ -124,13 +125,9 @@ class app:
 		self.forbidden_jutsu_lab1 = forbidden_jutsu_lab.forbidden_jutsu_lab(self.mouse, self.positions)
 		return self.forbidden_jutsu_lab1()
 		
-			
-
-		
-
-
 	def guild(self):
-		pass
+		self.guild = guild.guild(self.mouse, self.keyboard, self.positions, self.time)
+		return self.guild()
 
 	def jinchuriki_awakening(self):
 		pass
