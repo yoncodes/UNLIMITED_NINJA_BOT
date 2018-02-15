@@ -1,9 +1,0 @@
-*.pyc 
-.gitignore
-cache/unbot_cache.sqlite
-test.py
-pos_test.py
-settings/settings_1.ini
-master.ini
-browser/chromedriver.exe
-debug.log
