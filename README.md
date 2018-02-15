@@ -53,6 +53,7 @@ coming soon
 * Daily Benefits(Free and extra)
 * Elite Match (80% complete)
 * Beast (Work In progress)
+* Guild Tree (Claims, Donate, etc) (Work In progress)
 
 ![Beast](https://github.com/yoncodes/UNLIMITED_NINJA_BOT/blob/master/img/BEAST_FORM.gif)
 
@@ -67,7 +68,7 @@ coming soon
 * Jinchuriki
 * <del>Sage Heirloom</del>
 * Eight Gates
-* Guild Tree (Claims, Donate, etc)
+* <del>Guild Tree (Claims, Donate, etc)</del>
 * Elite Match (Fights, auto, manual)
 * Lost Tower (Manual Fights)
 * Ninja Clash
