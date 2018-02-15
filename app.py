@@ -1,6 +1,15 @@
 from UN_BOT import app
 
+import os.path
+
+MASTER_FILE = _SETTINGS = os.path.join(os.path.dirname(os.getcwd())) + '\\UNLIMITED_NINJA_BOT\\master.ini'
+
 UN_START = app.app()
+
+USERNAME = UN_START.position().read(MASTER_FILE, 'account','username')
+PASSWORD = UN_START.position().read(MASTER_FILE, 'account','password')
+SERVER = UN_START.position().read(MASTER_FILE, 'account','server')
+PLATFORM = UN_START.position().read(MASTER_FILE, 'account','platform')
 
 UN_START.update()
 
@@ -8,6 +17,7 @@ UN_START.update()
 
 #UN_START.show_window()
 #UN_START.system_checks().master_reset() #resets everything back to zero, great for at reset
+UN_START.start(USERNAME, PASSWORD, SERVER, PLATFORM)
 #UN_START.claim().check_in()
 #UN_START.claim().online()
 #UN_START.claim().kaguya_power()

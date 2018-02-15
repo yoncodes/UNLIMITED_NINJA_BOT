@@ -22,7 +22,7 @@ class dungeon:
 			self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
 			time.sleep(3)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'dungeon', 'open'))
-			time.sleep(2)
+			time.sleep(10)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'dungeon', 'auto'))
 			time.sleep(2)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'dungeon', 'close'))

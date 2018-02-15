@@ -15,13 +15,22 @@ from package.Konoha import konoha
 from package.Sage_Heirloom import sage_heirloom
 from package.Guild import guild
 
+from selenium import webdriver
+from sys import platform as _platform
+
 # Import Hack
 import os, sys, inspect
 
 import time
 
 from function.connection import connection
-from function.mouse import mouse
+
+# temp fix for mac users
+if _platform == "win32" or _platform =="win64":
+	from function.mouse import mouse
+elif _platform == "darwin":
+	from function.mouseMac import mouseMac as mouse
+
 from function.keyboard import keyboard
 from function.positions import positions
 from function.window import Window as window
@@ -30,14 +39,22 @@ from function.countdown import countdown
 from function._time import _time
 from function.check import check
 from function.schedule import schedule
+from function.auth import Auth
+
 
 import updater as update
 
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 
-_POSITIONS = parentdir + '\settings\positions.ini'
-_SETTINGS = parentdir + '\settings\settings.ini'
+if _platform == "win32" or _platform =="win64":
+	_POSITIONS = parentdir + '\settings\positions.ini'
+	_SETTINGS = parentdir + '\settings\settings.ini'
+	_BROWSER = parentdir + '\\browser\chromedriver.exe'
+elif _platform == "darwin":
+	_POSITIONS = parentdir + '/settings/positions.ini'
+	_SETTINGS = parentdir + '/settings/settings.ini'
+	_BROWSER = parentdir + '/browser/chromedriver'
 
 class app:
 
@@ -51,6 +68,8 @@ class app:
 		self.countdown = countdown()
 		self.time = _time()
 		self.schedule = schedule()
+
+		
 
 	def windows_ballon(self, title, msg):
 		self.popup.ShowWindow(title, msg)
@@ -71,6 +90,9 @@ class app:
 	def commands(self, cmd):
 		self.keyboard.type(cmd)
 
+	def position(self):
+		return self.positions
+
 	def system_checks(self):
 		self.check = check(self.positions, self.time)
 		return self.check()
@@ -84,8 +106,22 @@ class app:
 			print "[+] Auto Update disabled"
 
 
-	def start(self):
-		pass
+	def start(self, username, password, server, platform):
+		# set up chrome browser
+		prefs = {
+		    "profile.default_content_setting_values.plugins": 1,
+		    "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
+		    "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
+		    "PluginsAllowedForUrls": "http://ninja.joyfun.com"
+		}
+
+		self.chrome_options = webdriver.ChromeOptions()
+		self.chrome_options.add_argument('--disable-infobars')
+		self.chrome_options.add_experimental_option("prefs",prefs)
+		self.driver = webdriver.Chrome(executable_path=_BROWSER,chrome_options=self.chrome_options)
+
+		self.auth = Auth(self.driver, self.mouse, self.positions, self.window)
+		self.auth.login(username, password, server, platform)
 
 	def arena(self):
 		"""
@@ -116,7 +152,7 @@ class app:
 
 	def elite_match(self):
 		
-		self.elite_match = elite_match.elite_match(self.mouse,self.positions)
+		self.elite_match = elite_match.elite_match(self.mouse,self.positions, self.time)
 			
 		return self.elite_match()
 

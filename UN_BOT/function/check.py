@@ -32,6 +32,8 @@ class check:
 		self.positions.write(_SETTINGS,'dungeon','done', 0)
 		self.positions.write(_SETTINGS,'elite_match','done', 0)
 		self.positions.write(_SETTINGS,'forbidden_jutsu','done', 0)
+		self.positions.write(_SETTINGS,'guild','injects', 0)
+		self.positions.write(_SETTINGS,'guild','donate_done', 0)
 		self.positions.write(_SETTINGS,'loto','done', 0)
 		self.positions.write(_SETTINGS,'mount_myobuku','done', 0)
 		self.positions.write(_SETTINGS,'occult_techniques','done', 0)

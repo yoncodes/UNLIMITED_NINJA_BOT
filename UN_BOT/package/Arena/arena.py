@@ -34,8 +34,8 @@ class arena:
 			self.mouse.move(num)
 			print "[+] Fighting "
 			sleep(1)
-			print "[+] Waiting 20 seconds"
-			sleep(23)
+			print "[+] Waiting 50 seconds"
+			sleep(50)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'skip'))
 			sleep(3)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'ok'))
