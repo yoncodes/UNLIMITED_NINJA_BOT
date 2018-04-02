@@ -50,6 +50,7 @@ coming soon
 * Six Path Arcanum
 * Mount Myobuku
 * Dungeons (Auto Claims only)
+* Dungeon (Floor claims)
 * Daily Benefits(Free and extra)
 * Elite Match (80% complete)
 * Beast (Work In progress)
@@ -64,7 +65,7 @@ coming soon
 * Ninja Crusade 
 * Taboo Justu
 * Bloodline Limit
-* Dungeon (Floor claims)
+* <del> Dungeon (Floor claims)</del>
 * Jinchuriki
 * <del>Sage Heirloom</del>
 * Eight Gates

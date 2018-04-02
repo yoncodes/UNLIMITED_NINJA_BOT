@@ -61,7 +61,7 @@ class claim:
 	def kaguya_power(self):
 		if eval(str(self.positions.parse(_SETTINGS, 'claim', 'kaguya_power')[0])) != True:
 			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'open'))
-			sleep(3)
+			sleep(6)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'claim'))
 			sleep(3)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'kaguya_power', 'close'))

@@ -14,6 +14,8 @@ from package.ELITE_MATCH import elite_match
 from package.Konoha import konoha
 from package.Sage_Heirloom import sage_heirloom
 from package.Guild import guild
+from package.Lost_Tower import lost_tower
+from package.Yggdrassil import yggdrassil
 
 from selenium import webdriver
 from sys import platform as _platform
@@ -68,14 +70,15 @@ class app:
 		self.countdown = countdown()
 		self.time = _time()
 		self.schedule = schedule()
+		
 
 		
 
 	def windows_ballon(self, title, msg):
 		self.popup.ShowWindow(title, msg)
 
-	def show_window(self):
-		self.window.set_up(".*Unlimited Ninja - .*")
+	def show_window(self,platform):
+		self.window.set_up(platform)
 
 	def move(self, cord):
 		self.mouse.mousePos(cord)
@@ -144,7 +147,7 @@ class app:
 
 	def dungeon(self):
 		
-		self.Dungeon = dungeon.dungeon(self.mouse, self.positions)
+		self.Dungeon = dungeon.dungeon(self.mouse, self.positions, self.system_checks)
 		return self.Dungeon()
 		
 	def eight_gates(self):
@@ -191,21 +194,8 @@ class app:
 	
 
 	def lost_tower(self):
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'functions', 'hover'))
-		self.countdown.timer(5)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'open'))
-		self.countdown.timer(2)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'lvl_105'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'lvl_105_auto'))
-		self.countdown.timer(32)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'confirm'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'lvl_close'))
-		self.countdown.timer(1)
-		self.mouse.move(self.positions.parse(_POSITIONS, 'lost_tower', 'close'))
-		self.countdown.timer(1)
+		self.lost_tower1 = lost_tower.lost_tower(self.mouse, self.positions)
+		return self.lost_tower1()
 
 
 	def mail(self):
@@ -337,4 +327,10 @@ class app:
 		self.wings = wings.wings(self.mouse, self.positions)
 			
 		return self.wings().claim()
+
+	def yggdrassil(self):
+
+		self.yggdrassil = yggdrassil.yggdrassil(self.mouse, self.positions)
+
+		return self.yggdrassil()
 		

@@ -46,8 +46,16 @@ class Window:
     def return_hwnd(self):
         return self._handle
 
-    def set_up(self, title):
+    def set_up(self, platform):
 
+
+        if platform == "joyfun":
+            title = ".*Unlimited Ninja - .*"
+
+        elif platform == "fb":
+            title = "Ninja World"
+
+        
         self.find_window_wildcard(title)
 
         self.set_foreground()

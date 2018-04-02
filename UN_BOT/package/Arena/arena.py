@@ -15,33 +15,31 @@ class arena:
 	 	self.positions = positions
 	 	self.time = _time
 	 	
-	 	if(self.time.isNowInTimePeriod(datetime.strptime(self.positions.parse(_SETTINGS,'arena','fights_reset_time')[1],'%H:%M:%S%p').strftime('%H:%M:%S%p'), datetime.strptime(self.positions.parse(_SETTINGS,'arena','fight_time')[1],'%H:%M:%S%p').strftime('%H:%M:%S%p'))):
-	 		self.positions.write(_SETTINGS,'arena','fights_today', 0)
-
+	
 	def __call__(self):
 		return self
 
 	def fights(self, fights):
 		self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'open'))
 		sleep(3)
-		self.fights = 0
+		fightss = 0
 		current_fights = self.positions.parse(_SETTINGS,'arena','fights_today')[0]
-
-		while self.fights < fights:
+		
+		while fightss < fights:
 			num = self.positions.parse(_POSITIONS, 'arena', str((randint(2,10))) + '_place')
 			print "[+] Waiting "
 			sleep(2)
 			self.mouse.move(num)
 			print "[+] Fighting "
 			sleep(1)
-			print "[+] Waiting 50 seconds"
-			sleep(50)
+			print "[+] Waiting 32 seconds"
+			sleep(32)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'skip'))
 			sleep(3)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'ok'))
 
-			self.fights += 1
-			self.positions.write(_SETTINGS,'arena','fights_today',int(current_fights) + int(self.fights))
+			fightss += 1
+			self.positions.write(_SETTINGS,'arena','fights_today',int(current_fights) + int(fightss))
 		sleep(1)
 		self.mouse.move(self.positions.parse(_POSITIONS, 'arena', 'close'))
 

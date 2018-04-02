@@ -1,7 +1,9 @@
 import time 
-import os.path
+import os
+import pyautogui
 
 from datetime import datetime, timedelta
+from PIL import ImageGrab, ImageChops, Image
 
 _POSITIONS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\positions.ini'
 _SETTINGS = os.path.join(os.path.dirname(os.getcwd()))  + '\\UNLIMITED_NINJA_BOT\settings\settings.ini'
@@ -35,6 +37,7 @@ class check:
 		self.positions.write(_SETTINGS,'guild','injects', 0)
 		self.positions.write(_SETTINGS,'guild','donate_done', 0)
 		self.positions.write(_SETTINGS,'loto','done', 0)
+		self.positions.write(_SETTINGS,'lost_tower','done', 0)
 		self.positions.write(_SETTINGS,'mount_myobuku','done', 0)
 		self.positions.write(_SETTINGS,'occult_techniques','done', 0)
 		self.positions.write(_SETTINGS,'samsara_land','done', 0)
@@ -42,3 +45,46 @@ class check:
 		self.positions.write(_SETTINGS,'sage_heirloom','done', 0)
 		self.positions.write(_SETTINGS,'top_kages','done', 0)
 		self.positions.write(_SETTINGS,'wings','done', 0)
+
+	def disconnect(self):
+		return self.screenGrab(self.positions.parse(_POSITIONS, 'check', 'disconnect_x_1'),self.positions.parse(_POSITIONS, 'check', 'disconnect_y_1'),"disconnect")
+
+	def gedo_seal(self):
+		return self.screenGrab(self.positions.parse(_POSITIONS, 'check', 'gedo_seal_x'),self.positions.parse(_POSITIONS, 'check', 'gedo_seal_y'),"gedo_seal")
+
+	def gedo_10_tails(self):
+		return self.screenGrab(self.positions.parse(_POSITIONS, 'check', 'gedo_10_tails_x'),self.positions.parse(_POSITIONS, 'check', 'gedo_10_tails_y'),"gedo_10_tails")
+
+	def dungeon_end(self):
+		return self.screenGrab(self.positions.parse(_POSITIONS, 'dungeon', 'time_x'),self.positions.parse(_POSITIONS, 'dungeon', 'time_x'),"dung_time")
+
+	def screenGrab(self,pos1, pos2, method):
+		box = []
+		box.append(float(pos1[0]))
+		box.append(float(pos1[1]))
+		box.append(float(pos2[0]))
+		box.append(float(pos2[1]))
+		
+		
+		if method == "disconnect":
+			dcbutton = pyautogui.locateOnScreen(os.getcwd() + '\\img\\disconnect_1.png')
+			if dcbutton != None:
+				return True
+		elif method == "gedo_seal":
+			gedo = pyautogui.locateOnScreen(os.getcwd() + '\\img\\gedo_seal.png')
+			if gedo != None:
+				return True
+
+		elif method == "gedo_10_tails":
+			gedo = pyautogui.locateOnScreen(os.getcwd() + '\\img\\gedo_10_tails.png')
+			if gedo != None:
+				return True
+
+		elif method == "dung_time":
+			gedo = pyautogui.locateOnScreen(os.getcwd() + '\\img\\dung_time_end.png')
+			if gedo != None:
+				return True
+
+		return False
+
+		

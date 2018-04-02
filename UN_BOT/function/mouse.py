@@ -13,7 +13,9 @@ window_width = 1298
 window_height = 850
 
 x_pad = (screen_width / 2) - (window_width / 2)  + 18
-y_pad = (screen_height / 2) - (window_height / 2) + 120
+y_pad = (screen_height / 2) - (window_height / 2) + 120 
+
+
 
 class mouse:
 	def leftClick(self):

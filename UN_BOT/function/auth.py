@@ -25,7 +25,7 @@ class Auth:
 			sleep(5)
 			self.driver.get('http://ninja.joyfun.com/play/server/' + str(server))
 			sleep(5)
-			self.window.set_up(".*Unlimited Ninja - .*")
+			self.window.set_up("joyfun")
 			sleep(20)
 			self.mouse.move(self.positions.parse(_POSITIONS, 'browser', 'pop_up_close'))
 			sleep(.5)
@@ -38,7 +38,19 @@ class Auth:
 			self.driver.find_element_by_id("email").send_keys(username)
 			self.driver.find_element_by_id("password").send_keys(password)
 			self.driver.find_element_by_xpath("//*[@type='submit']").submit()
-			sleep(45)
+			sleep(10)
+
+		elif platform == "fb":
+			self.driver.get("https://www.plaync100.us/user/login")
+			sleep(6)
+			self.driver.find_element_by_id("email").send_keys(username)
+			self.driver.find_element_by_id("password").send_keys(password)
+			self.driver.find_element_by_xpath("//*[@type='submit']").submit()
+			sleep(2)
+			self.driver.get('http://www.plaync100.us/game/ninjaworld/play/' +str(server) +'/psrc/JCfacebook')
+			sleep(8)
+			self.driver.execute_script("document.getElementById('header').remove();")
+			
 
 
 	def __call__(self, value=[]):
